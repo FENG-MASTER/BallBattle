@@ -19,6 +19,15 @@
       <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Images\bg.xnb</Output>
       <Time>2016-05-12T14:03:12.494822+08:00</Time>
     </Item>
+    <Item>
+      <Source>Fonts\ScoreFont.spritefont</Source>
+      <Name>Fonts\ScoreFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\ScoreFont.xnb</Output>
+      <Time>2016-05-16T18:18:26.5884404+08:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{748D50D4-56A2-4D3E-B837-D654EC0D2CDF}</ContentProjectGUID>

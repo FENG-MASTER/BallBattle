@@ -18,11 +18,18 @@ namespace BallBattle
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
         BallComponent component;
+
+        SpriteFont ScoreFont;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+        //    graphics.PreferredBackBufferWidth = 1920;    // 设置分辨率
+          //  graphics.PreferredBackBufferHeight = 1080;
+            graphics.IsFullScreen = true;
         }
 
         /// <summary>
@@ -48,7 +55,8 @@ namespace BallBattle
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            ScoreFont = Content.Load<SpriteFont>(@"Fonts\\ScoreFont");
+            ScoreBoard.init(ScoreFont);
             // TODO: use this.Content to load your game content here
         }
 
@@ -69,8 +77,9 @@ namespace BallBattle
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed||Keyboard.GetState().IsKeyDown(Keys.Escape)) { 
                 this.Exit();
+              }
 
             // TODO: Add your update logic here
            
@@ -84,9 +93,12 @@ namespace BallBattle
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-           
 
-            // TODO: Add your drawing code here
+            //积分板
+            spriteBatch.Begin();
+            ScoreBoard.getInstance().onDraw(spriteBatch);
+            spriteBatch.End();
+           
 
             base.Draw(gameTime);
         }

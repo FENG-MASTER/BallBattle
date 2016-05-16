@@ -132,6 +132,10 @@ namespace BallBattle
             return this.rect;
         }
 
+        public int getVal() {
+            return val;
+        }
+
         
 
     }

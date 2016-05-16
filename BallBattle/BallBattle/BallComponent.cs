@@ -65,7 +65,8 @@ namespace BallBattle
                 
                 if(ball.getRect().Intersects(player.getRect())){
                     //¼ì²âÅö×²
-                    Console.WriteLine("---");
+                    ScoreBoard.getInstance().addScore(ball.getVal());
+                    removeList.Add(ball);
                 }
                 
                 
