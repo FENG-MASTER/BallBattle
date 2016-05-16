@@ -64,12 +64,17 @@ namespace BallBattle
          */
 
         public void upDate(Rectangle rect) {
+
+            postion += (getDirection() * speed);
+
+            this.rect.X = (int)postion.X;
+            this.rect.Y = (int)postion.Y;
             this.rect.Height = (int)(val * (100 / (WallManager.wallRect.Height / 4.0)));
             this.rect.Width = this.rect.Height;
             scale =( (float)this.rect.Height) / texture.Height;
            
 
-            postion += (getDirection()*speed);
+           
             currentFrame.X++;
             if(currentFrame.X>sheetSize.X){
                 currentFrame.X = 1;

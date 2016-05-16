@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using BallBattle.Model.Interface;
 
+
 namespace BallBattle
 {
     /// <summary>
@@ -50,10 +51,24 @@ namespace BallBattle
             // TODO: Add your update code here
 
             List<BaseBall> removeList = new List<BaseBall>();
+            player.upDate(Game.Window.ClientBounds);
 
+            if (wallmg.checkBall(player))
+            {
+                //越界要做的事情,默认把位置修改回   
+            }
 
             foreach(BaseBall ball in ballList){
                 ball.upDate(Game.Window.ClientBounds);
+                Console.WriteLine("Player:"+player.getRect());
+                Console.WriteLine("Ball:" + ball.getRect());
+                
+                if(ball.getRect().Intersects(player.getRect())){
+                    //检测碰撞
+                    Console.WriteLine("---");
+                }
+                
+                
                 if (!wallmg.checkBall(ball))
                 {//检测是否超出边界
                     removeList.Add(ball);
@@ -65,7 +80,7 @@ namespace BallBattle
                ballList.Remove(rball);//删除超出边界的球
            }
 
-           Console.WriteLine(ballList.Count);
+           
             
             base.Update(gameTime);
         }
@@ -80,7 +95,7 @@ namespace BallBattle
             ball1.setRoad(new Rush(ball1));
             ballList.Add(ball1);
             player = new PlayerBall(new Vector2(100,100),6,texture,new Point(200,200),new Point(1,1),50);
-            ballList.Add(player);
+            
             base.LoadContent();
         }
 
@@ -89,6 +104,7 @@ namespace BallBattle
         {
 
             sb.Begin(SpriteSortMode.FrontToBack,BlendState.AlphaBlend);
+            player.Draw(sb);
             foreach (BaseBall ball in ballList)
             {
                 ball.Draw(sb);
