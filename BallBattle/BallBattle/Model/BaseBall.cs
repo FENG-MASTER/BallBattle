@@ -27,8 +27,9 @@ namespace BallBattle
         private Point sheetSize;//动画表大小
 
 
-        private ImpactInterface impactInterface;
-        private RoadInterface roadInterface;
+        private ImpactInterface impactInterface;//碰撞器
+
+        private RoadInterface roadInterface;//路径器
 
 
         public BaseBall(Vector2 postion, int speed,Vector2 direction, Texture2D texture, Point frameSize, Point sheetSize,int val)
@@ -87,8 +88,14 @@ namespace BallBattle
         
         }
 
-        public void impactBall(BaseBall ball) {
-            impactInterface.impact();
+        public void addVal(int add)
+        {
+            val += add;
+
+        }
+
+        public Boolean impactBall(BaseBall ball) {
+           return impactInterface.impact(ball);
         
         }
 
@@ -134,6 +141,17 @@ namespace BallBattle
 
         public int getVal() {
             return val;
+        }
+
+       virtual public Boolean isOutDo() {
+           if (roadInterface == null)
+           {
+               return true;
+           }
+           else {
+               return roadInterface.isOutDo();
+           }
+        
         }
 
         

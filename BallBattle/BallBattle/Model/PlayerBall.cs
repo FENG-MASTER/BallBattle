@@ -13,15 +13,28 @@ namespace BallBattle
     class PlayerBall:
         BaseBall
     {
-        
+        private static PlayerBall bb;
 
-        public PlayerBall(Vector2 postion, int speed, Texture2D texture, Point frameSize, Point sheetSize,int val) 
+        public static PlayerBall getInstance() {
+            return bb;
+        }
+
+        public static void init(Vector2 postion, int speed, Texture2D texture, Point frameSize, Point sheetSize, int val)
+        {
+            bb = new PlayerBall(postion, speed,texture, frameSize, sheetSize, val);
+        
+        }
+        
+        
+        private PlayerBall(Vector2 postion, int speed, Texture2D texture, Point frameSize, Point sheetSize,int val) 
             :base(postion,speed,Vector2.Zero,texture,frameSize,sheetSize,val)
         {
             
         
         
         }
+
+       
 
         public override Vector2 getDirection()
         {

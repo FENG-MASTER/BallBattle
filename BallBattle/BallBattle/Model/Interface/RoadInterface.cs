@@ -18,5 +18,12 @@ namespace BallBattle.Model.Interface
         {
             return Vector2.Zero;
        }
+
+         
+        public virtual Boolean isOutDo()
+        {
+            //该方法在球超界后调用,返回值表示是否清除
+            return true;
+        }
     }
 }

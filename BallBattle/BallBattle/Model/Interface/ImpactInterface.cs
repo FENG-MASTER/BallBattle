@@ -14,8 +14,18 @@ namespace BallBattle.Model.Interface
             this.ball = ball;
         }
 
-       public virtual void impact() {
-        
+       public virtual Boolean impact(BaseBall otherBall) {
+           if (ball.getVal() < otherBall.getVal())
+           {
+               otherBall.addVal(ball.getVal());
+               return true;
+           }
+           else {
+
+               return false;
+           }
         }
+
+
     }
 }

@@ -72,10 +72,12 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BallComponent.cs" />
-    <Compile Include="BallManager.cs" />
+    <Compile Include="Chapters.cs" />
+    <Compile Include="Model\BallComponent.cs" />
     <Compile Include="Model\BaseBall.cs" />
     <Compile Include="Model\Interface\ImpactInterface.cs" />
+    <Compile Include="Model\Interface\PlayerImpact.cs" />
+    <Compile Include="Model\Interface\RandomRoad.cs" />
     <Compile Include="Model\Interface\RoadInterface.cs" />
     <Compile Include="Model\Interface\Rush.cs" />
     <Compile Include="Model\PlayerBall.cs" />

@@ -29,7 +29,7 @@ namespace BallBattle
             Content.RootDirectory = "Content";
         //    graphics.PreferredBackBufferWidth = 1920;    // …Ë÷√∑÷±Ê¬ 
           //  graphics.PreferredBackBufferHeight = 1080;
-            graphics.IsFullScreen = true;
+        //  graphics.IsFullScreen = true;
         }
 
         /// <summary>

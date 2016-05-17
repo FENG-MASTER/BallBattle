@@ -9,16 +9,25 @@ namespace BallBattle.Model.Interface
     class Rush:
          RoadInterface
     {
-
+        
         public Rush(BaseBall ball):base(ball)
         {
-           
+          
         }
 
         public override Vector2 getDirection()
         {
-            Vector2 v=new Vector2(0,1);
-            return v;
+            Vector2 v = (PlayerBall.getInstance().getPosition() - ball.getPosition());
+            Console.WriteLine(v);
+
+            return v / v.Length();
+           
+        }
+
+        public override bool isOutDo()
+        {
+           
+            return true;
         }
 
     }
