@@ -12,9 +12,7 @@ namespace BallBattle
     {
         protected Vector2 postion;//当前位置
         protected int speed;//速度
-        protected Vector2 direction;
 
-        protected Texture2D texture;//图像纹理
 
         protected Rectangle rect;//球的大小(检测碰撞)
         private float scale;//用于缩放
@@ -23,8 +21,7 @@ namespace BallBattle
 
 
         private Point currentFrame;//当前播放到的动画位置
-        private Point frameSize;//每个动画大小
-        private Point sheetSize;//动画表大小
+        private Textures.MyTexture myTexture;
 
 
         private ImpactInterface impactInterface;//碰撞器
@@ -32,33 +29,26 @@ namespace BallBattle
         private RoadInterface roadInterface;//路径器
 
 
-        public BaseBall(Vector2 postion, int speed,Vector2 direction, Texture2D texture, Point frameSize, Point sheetSize,int val)
+        public BaseBall(Vector2 postion, int speed,Textures.MyTexture texture,int val)
         {
             this.postion = postion;
             this.speed = speed;
-            this.direction = direction;
-            this.texture = texture;
-            this.frameSize = frameSize;
-            this.sheetSize = sheetSize;
+            this.myTexture = texture;
             impactInterface = new ImpactInterface(this);
             roadInterface = new RoadInterface(this);
-            this.rect = new Rectangle((int)postion.X,(int)postion.Y,(int)texture.Width,(int)texture.Height);
+            this.rect = new Rectangle((int)postion.X, (int)postion.Y, (int)myTexture.texture.Width, (int)myTexture.texture.Height);
             this.val = val;
         }
 
         public BaseBall() {
             this.postion = Vector2.Zero;
             this.speed = 1;
-            this.direction = Vector2.Zero;
-            this.texture = null ;
+            this.myTexture = null;
             this.currentFrame = new Point(1,1);
-            this.frameSize = new Point(0, 0);
-            this.sheetSize = new Point(1, 1);
             val = 1;
         }
 
-      
-
+  
 
         /*
          更新动画状态
@@ -72,15 +62,17 @@ namespace BallBattle
             this.rect.Y = (int)postion.Y;
             this.rect.Height = (int)(val * (100 / (WallManager.wallRect.Height / 4.0)));
             this.rect.Width = this.rect.Height;
-            scale =( (float)this.rect.Height) / texture.Height;
+            scale =( (float)this.rect.Height) / myTexture.texture.Height;
            
 
            
             currentFrame.X++;
-            if(currentFrame.X>sheetSize.X){
+            if (currentFrame.X > myTexture.sheetSize.X)
+            {
                 currentFrame.X = 1;
                 currentFrame.Y++;
-                if(currentFrame.Y>sheetSize.Y){
+                if (currentFrame.Y > myTexture.sheetSize.Y)
+                {
                     currentFrame.Y = 1;
                     currentFrame.X = 1;
                 }
@@ -105,9 +97,10 @@ namespace BallBattle
 
         public void Draw(SpriteBatch spriteBatch) {
 
-            spriteBatch.Draw(texture,
+            spriteBatch.Draw(myTexture.texture,
                 postion,
-                new Rectangle((currentFrame.X - 1) * sheetSize.X, (currentFrame.Y - 1) * sheetSize.Y, frameSize.X, frameSize.Y),
+                new Rectangle((currentFrame.X - 1) * myTexture.sheetSize.X, 
+                    (currentFrame.Y - 1) * myTexture.sheetSize.Y, myTexture.frameSize.X, myTexture.frameSize.Y),
                 Color.White,
                 0,
                 Vector2.Zero,
@@ -116,6 +109,7 @@ namespace BallBattle
                 0);
 
         }
+
 
 
         public Vector2 getPosition() {

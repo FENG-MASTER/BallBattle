@@ -55,10 +55,13 @@ namespace BallBattle
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
             ScoreFont = Content.Load<SpriteFont>(@"Fonts\\ScoreFont");
             ScoreBoard.init(ScoreFont);
-            // TODO: use this.Content to load your game content here
-        }
+
+            
+            
+         }
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload

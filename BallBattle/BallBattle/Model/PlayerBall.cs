@@ -19,15 +19,15 @@ namespace BallBattle
             return bb;
         }
 
-        public static void init(Vector2 postion, int speed, Texture2D texture, Point frameSize, Point sheetSize, int val)
+        public static void init(Vector2 postion, int speed, Textures.MyTexture myTexture, int val)
         {
-            bb = new PlayerBall(postion, speed,texture, frameSize, sheetSize, val);
+            bb = new PlayerBall(postion, speed, myTexture, val);
         
         }
         
         
-        private PlayerBall(Vector2 postion, int speed, Texture2D texture, Point frameSize, Point sheetSize,int val) 
-            :base(postion,speed,Vector2.Zero,texture,frameSize,sheetSize,val)
+        private PlayerBall(Vector2 postion, int speed, Textures.MyTexture myTexture,int val) 
+            :base(postion,speed, myTexture,val)
         {
             
         
