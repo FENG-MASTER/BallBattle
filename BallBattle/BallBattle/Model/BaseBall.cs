@@ -31,23 +31,28 @@ namespace BallBattle
 
         public BaseBall(Vector2 postion, int speed,Textures.MyTexture texture,int val)
         {
-            this.postion = postion;
+            
+            
             this.speed = speed;
             this.myTexture = texture;
             impactInterface = new ImpactInterface(this);
             roadInterface = new RoadInterface(this);
+            this.postion = getRandPostion();
             this.rect = new Rectangle((int)postion.X, (int)postion.Y, (int)myTexture.texture.Width, (int)myTexture.texture.Height);
             this.val = val;
+           
         }
 
         public BaseBall() {
-            this.postion = Vector2.Zero;
+           
             this.speed = 1;
+            this.postion = getRandPostion(); 
             this.myTexture = null;
             this.currentFrame = new Point(1,1);
             impactInterface = new ImpactInterface(this);
             roadInterface = new RoadInterface(this);
             val = 1;
+            
         }
 
   
@@ -155,6 +160,37 @@ namespace BallBattle
            }
         
         }
+
+       public Vector2 getRandPostion() {
+           int ran=new Random().Next() % 4;
+           Console.WriteLine(ran);
+           Vector2 v = Vector2.Zero ;
+           switch(ran){
+               case 0:
+                   v = new Vector2(myTexture.frameSize.X * scale,
+                       (float) (new Random().Next((int)(WallManager.wallRect.Height - myTexture.frameSize.X * scale))));
+                   break;
+
+               case 1:
+                   v = new Vector2(new Random().Next((int)(WallManager.wallRect.Width - myTexture.frameSize.X * scale)), 
+                       myTexture.frameSize.X * scale);
+                   break;
+               case 2:
+                   v = new Vector2(WallManager.wallRect.Width - myTexture.frameSize.X * scale, 
+                       new Random().Next((int)(WallManager.wallRect.Height - myTexture.frameSize.X * scale)));
+                   break;
+               case 3:
+                   v = new Vector2(new Random().Next((int)(WallManager.wallRect.Width - myTexture.frameSize.X * scale)), 
+                       WallManager.wallRect.Height - myTexture.frameSize.X * scale);
+                   break;
+
+           
+           }
+
+           
+           return v;
+       
+       }
 
         
 
