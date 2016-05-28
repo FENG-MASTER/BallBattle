@@ -36,9 +36,16 @@ namespace BallBattle.Model.Interface
 
         public override bool isOutDo()
         {
-            lastV = -lastV;
-            isOut = true;
-            return false;
+            if (!base.isOutDo())
+            {
+                lastV = -lastV;
+                isOut = true;
+                return false;
+            }
+            else {
+                return true;
+            }
+            
         }
 
     }

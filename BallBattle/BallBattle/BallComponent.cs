@@ -55,7 +55,6 @@ namespace BallBattle
 
             ScoreBoard.getInstance().upDate();
 
-
             if (wallmg.checkBall(player))
             {
                 //越界要做的事情,默认把位置修改回   
@@ -77,11 +76,10 @@ namespace BallBattle
                     {
                         //被大的球吃到了
                         if(player.impactBall(ball)){//交给player处理事件,返回true表示游戏结束
-                            //游戏结束
-
-
+                            //玩家死亡
+                            
+                            
                         }
-                        
                         Console.WriteLine("end");
                     }
                     
@@ -99,7 +97,14 @@ namespace BallBattle
                ballList.Remove(rball);//删除超出边界的球
            }
 
-           
+            //交给关卡类 随机生成球
+           BaseBall newball = Chapters.getInstance().getBaseBall();
+           if (newball != null)
+           {
+               ballList.Add(newball);
+           }
+
+
             
             base.Update(gameTime);
         }

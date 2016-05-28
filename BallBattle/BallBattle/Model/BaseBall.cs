@@ -45,6 +45,8 @@ namespace BallBattle
             this.speed = 1;
             this.myTexture = null;
             this.currentFrame = new Point(1,1);
+            impactInterface = new ImpactInterface(this);
+            roadInterface = new RoadInterface(this);
             val = 1;
         }
 
@@ -77,6 +79,12 @@ namespace BallBattle
                     currentFrame.X = 1;
                 }
             }
+        
+        }
+
+
+        public void setSpeed(int spe) {
+            this.speed = spe;
         
         }
 

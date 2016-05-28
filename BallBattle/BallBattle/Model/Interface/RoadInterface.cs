@@ -10,6 +10,9 @@ namespace BallBattle.Model.Interface
     {
 
         protected BaseBall ball;
+
+         private int times_out=0;
+         
         public RoadInterface(BaseBall ball)
         {
             this.ball = ball;
@@ -23,7 +26,16 @@ namespace BallBattle.Model.Interface
         public virtual Boolean isOutDo()
         {
             //该方法在球超界后调用,返回值表示是否清除
-            return true;
+            times_out++;
+            if (times_out < 5)
+            {
+                return false;
+            }
+            else {
+
+                return true;
+            }
+            
         }
     }
 }

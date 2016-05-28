@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using BallBattle.Model.Interface;
+using BallBattle.Factory;
 
 namespace BallBattle
 {
@@ -14,15 +15,16 @@ namespace BallBattle
             public Color color;//关卡初始颜色
             public int speed;//关卡的球的基准速度
             public int genRate;//生成频率
-            public List<BaseBall> balls;
+            public List<BallFactory> ballsf;
             public List<int> rates;
 
-            public Chapter(int p,Color c,int speed,int genRate,List<BaseBall> balls,List<int> rates){
+            public Chapter(int p, Color c, int speed, int genRate, List<BallFactory> ballsf, List<int> rates)
+            {
                 point=p;
                 color=c;
                 this.speed=speed;
                 this.genRate=genRate;
-                this.balls=balls;
+                this.ballsf=ballsf;
                 this.rates=rates;
             }
 
@@ -34,20 +36,20 @@ namespace BallBattle
 
         private static Chapters instance = new Chapters();
 
+        private int times=0;
         public static Chapters getInstance() {
             return instance;
         }
 
         private Chapters(){
             //初始化关卡信息
-            BaseBall ball1=new BaseBall();
-            ball1.setRoad(new Rush(ball1));
+            BallFactory f1 = new BallFactory(Textures.getInstance().baseBallTexture,10,"","");
 
-            BaseBall ball2=new BaseBall();
-            ball2.setRoad(new RandomRoad(ball2));
+            BallFactory f2 = new BallFactory(Textures.getInstance().baseBallTexture, 120, "", "");
+
             chapters = new List<Chapter>{
-                                        new Chapter(0,Color.Yellow,3,40,new List<BaseBall>{ball1,ball2},new List<int>{1,2}),
-                                       new Chapter(0,Color.Red,8,10,new List<BaseBall>{ball1,ball2},new List<int>{1,20}),    
+                                        new Chapter(0,Color.Yellow,3,100,new List<BallFactory>{f1,f2},new List<int>{3,3}),
+                                       new Chapter(50,Color.Red,8,100,new List<BallFactory>{f1,f2},new List<int>{1,20}),    
                                         };
 
 
@@ -88,24 +90,46 @@ namespace BallBattle
         }
 
         public BaseBall getBaseBall(){
+            times++;
+            if(times<getCurrentChapterGenRate()){
+                return null;
+            }
+            times = 0;
+
+            BaseBall gBall=null;
+
+
             int sum = 0;
-            Random r = new Random();
+            Random r = new Random();//随机数,用于随机取一个球
             List<int> rates=getCurrentChapter().rates;
+            
+      
+
             foreach(int each in rates){
                 sum += each;            
             }
-
+      
             int ran=r.Next(0,sum);
 
 
-            for (int i = 0; i < rates.Count;i++ )
+
+            int a=0;
+            for (int i = 0; i < rates.Count; i++)
             {
-                
-
+               
+                if(a<=ran&&(a+rates[i])>=ran){
+                    gBall = getCurrentChapter().ballsf[i].built();
+                    break;
+                }
+                a += rates[i];         
             }
-            
 
-            return null;
+   
+
+            gBall.setSpeed(getCurrentChapterSpeed());
+
+
+            return gBall;
         }
 
         public void check() {

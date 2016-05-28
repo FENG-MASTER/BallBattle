@@ -10,8 +10,8 @@ namespace BallBattle.Model.Interface
     {
 
         private PlayerBall player;
-        public PlayerImpact(PlayerBall player):base(player) {
-        
+        public PlayerImpact(BaseBall p):base(p) {
+            player = (PlayerBall)p;
         }
 
 
@@ -19,8 +19,7 @@ namespace BallBattle.Model.Interface
         {
             if(player.getVal()<otherBall.getVal()){
                 //玩家被大球吃
-
-                
+                player.dead();
             }
 
             return true;

@@ -21,7 +21,7 @@ namespace BallBattle.Model.Interface
                return true;
            }
            else {
-
+               
                return false;
            }
         }

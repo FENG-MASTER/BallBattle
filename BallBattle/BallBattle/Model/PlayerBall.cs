@@ -6,6 +6,7 @@ using BallBattle.Model;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using BallBattle.Model.Interface;
 
 
 namespace BallBattle
@@ -22,7 +23,7 @@ namespace BallBattle
         public static void init(Vector2 postion, int speed, Textures.MyTexture myTexture, int val)
         {
             bb = new PlayerBall(postion, speed, myTexture, val);
-        
+            bb.setImpact(new PlayerImpact(bb));
         }
         
         
@@ -57,6 +58,14 @@ namespace BallBattle
                 v.X = -1;
             }
             return v;
+        
+        }
+
+
+        public void dead() {
+               //死亡
+            val = 20;
+
         
         }
 
