@@ -22,7 +22,7 @@ namespace BallBattle
         private List<BaseBall> ballList = new List<BaseBall>();
 
         private SpriteBatch sb;
-        private PlayerBall player;
+       // private PlayerBall player;
         private WallManager wallmg;
 
         public BallComponent(Game game)
@@ -57,22 +57,23 @@ namespace BallBattle
             }
             
             List<BaseBall> removeList = new List<BaseBall>();
-            player.upDate(Game.Window.ClientBounds);
+            PlayerBall.getInstance().upDate(Game.Window.ClientBounds);
 
             ScoreBoard.getInstance().upDate();
 
-            if (wallmg.checkBall(player))
+            if (wallmg.checkBall(PlayerBall.getInstance()))
             {
                 //越界要做的事情,默认把位置修改回   
             }
 
             foreach(BaseBall ball in ballList){
                 ball.upDate(Game.Window.ClientBounds);
-          
-                
-                if(ball.getRect().Intersects(player.getRect())){
 
-                    if (ball.impactBall(player))
+
+                if (ball.getRect().Intersects(PlayerBall.getInstance().getRect()))
+                {
+
+                    if (ball.impactBall(PlayerBall.getInstance()))
                     {
                         //小球被吃
                         removeList.Add(ball);
@@ -81,7 +82,8 @@ namespace BallBattle
                     else
                     {
                         //被大的球吃到了
-                        if(player.impactBall(ball)){//交给player处理事件,返回true表示游戏结束
+                        if (PlayerBall.getInstance().impactBall(ball))
+                        {//交给player处理事件,返回true表示游戏结束
                             //玩家死亡
                             
                             
@@ -132,7 +134,6 @@ namespace BallBattle
             ballList.Add(ball1);
 
             PlayerBall.init(new Vector2(100, 100), 6, Textures.getInstance().playerBallTexture, 50);
-            player = PlayerBall.getInstance();
             
             base.LoadContent();
         }
@@ -142,8 +143,8 @@ namespace BallBattle
         {
 
             sb.Begin(SpriteSortMode.FrontToBack,BlendState.AlphaBlend);
-            
-            player.Draw(sb);
+
+            PlayerBall.getInstance().Draw(sb);
             foreach (BaseBall ball in ballList)
             {
                 ball.Draw(sb);
