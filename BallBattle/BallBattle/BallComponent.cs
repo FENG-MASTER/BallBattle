@@ -22,8 +22,8 @@ namespace BallBattle
         private List<BaseBall> ballList = new List<BaseBall>();
 
         private SpriteBatch sb;
-       // private PlayerBall player;
-        private WallManager wallmg;
+
+        private WallManager wallmg;//«Ωπ‹¿Ì¿‡
 
         public BallComponent(Game game)
             : base(game)
@@ -113,7 +113,7 @@ namespace BallBattle
                ballList.Add(newball);
            }
 
-
+           Chapters.getInstance().check();
             
             base.Update(gameTime);
         }
@@ -122,17 +122,8 @@ namespace BallBattle
         protected override void LoadContent()
         {
          
-
             wallmg = new WallManager(Game.Window.ClientBounds);
             sb = new SpriteBatch(Game.GraphicsDevice);
-
-         
-
-            BaseBall ball1 = new BaseBall(Vector2.Zero,1,Textures.getInstance().baseBallTexture,40);
-           // ball1.setRoad(new Rush(ball1));
-            ball1.setRoad(new RandomRoad(ball1));
-            ballList.Add(ball1);
-
             PlayerBall.init(new Vector2(100, 100), 6, Textures.getInstance().playerBallTexture, 50);
             
             base.LoadContent();
@@ -141,7 +132,7 @@ namespace BallBattle
 
         public override void Draw(GameTime gameTime)
         {
-
+            GraphicsDevice.Clear(Textures.getBgcolor(Chapters.getInstance().getCurrentChapterColor()));
             sb.Begin(SpriteSortMode.FrontToBack,BlendState.AlphaBlend);
 
             PlayerBall.getInstance().Draw(sb);

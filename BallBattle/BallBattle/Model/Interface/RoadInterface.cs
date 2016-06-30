@@ -22,6 +22,12 @@ namespace BallBattle.Model.Interface
             return Vector2.Zero;
        }
 
+        public Vector2 getPosition() {
+            return getRandPostion(new Rectangle(0, 0, 
+                (int)(ball.getRect().Width*ball.scale),
+                (int)(ball.getRect().Height*ball.scale)));
+        }
+
          
         public virtual Boolean isOutDo()
         {
@@ -37,5 +43,41 @@ namespace BallBattle.Model.Interface
             }
             
         }
+
+        public  Vector2 getRandPostion(Rectangle rect)
+        {
+            //默认球生成位置算法 (随机)
+            int ran = new Random().Next() % 4;
+            Vector2 v = Vector2.Zero;
+            switch (ran)
+            {
+
+
+                case 0:
+                    v = new Vector2(rect.Width,
+                        (float)(new Random().Next((int)(WallManager.wallRect.Height - rect.Width))));
+                    break;
+
+                case 1:
+                    v = new Vector2(new Random().Next((int)(WallManager.wallRect.Width - rect.Width)),
+                        rect.Width);
+                    break;
+                case 2:
+                    v = new Vector2(WallManager.wallRect.Width - rect.Width,
+                        new Random().Next((int)(WallManager.wallRect.Height - rect.Height)));
+                    break;
+                case 3:
+                    v = new Vector2(new Random().Next((int)(WallManager.wallRect.Width - rect.Width)),
+                        WallManager.wallRect.Height - rect.Height);
+                    break;
+
+
+            }
+
+
+            return v;
+
+        }
+
     }
 }

@@ -14,9 +14,11 @@ namespace BallBattle.Factory
         private String impactType;
         private String roadType;
         private Textures.MyTexture texture;
+        private Color color=Color.White;
         private int val;
-        public BallFactory(Textures.MyTexture texture, int val, String impactType, String roadType)
+        public BallFactory(Textures.MyTexture texture,Color c ,int val, String impactType, String roadType)
         {
+            this.color = c;
             this.val = val;
             this.texture = texture;
             this.impactType = impactType;
@@ -25,8 +27,8 @@ namespace BallBattle.Factory
         }
 
         public BaseBall built() {
-            BaseBall ball = new BaseBall(Vector2.Zero,0,texture,val);
-            
+            BaseBall ball = new BaseBall(color,Vector2.Zero,0,texture,val);
+            ball.setColor(color);
             switch(impactType){
                 default:
                     ball.setImpact(new ImpactInterface(ball));

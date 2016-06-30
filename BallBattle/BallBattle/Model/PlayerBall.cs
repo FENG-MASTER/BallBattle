@@ -37,7 +37,7 @@ namespace BallBattle
         
         
         private PlayerBall(Vector2 postion, int speed, Textures.MyTexture myTexture,int val) 
-            :base(postion,speed, myTexture,val)
+            :base(Color.Black,postion,speed, myTexture,val)
         {
             
         

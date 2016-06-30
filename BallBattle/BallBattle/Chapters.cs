@@ -8,6 +8,18 @@ using BallBattle.Factory;
 
 namespace BallBattle
 {
+
+    /*
+     *关卡类,用于存储和控制所有关卡相关内容,
+     * 包括
+     * 1.关卡要求分数
+     * 2,关卡的颜色
+     * 3.关卡中的球的基础速度
+     * 4.关卡中球生成的频率
+     * 5.关卡中球的种类
+     * 6.对应球的种类的生成比例
+     * 
+     */
     class Chapters
     {
         private  class Chapter {
@@ -43,13 +55,14 @@ namespace BallBattle
 
         private Chapters(){
             //初始化关卡信息
-            BallFactory f1 = new BallFactory(Textures.getInstance().baseBallTexture,10,"","");
+            BallFactory f1 = new BallFactory(Textures.getInstance().baseBallTexture, Color.White, 10, "", "");
 
-            BallFactory f2 = new BallFactory(Textures.getInstance().baseBallTexture, 120, "", "");
+            BallFactory f2 = new BallFactory(Textures.getInstance().baseBallTexture, Color.White, 120, "", "");
 
             chapters = new List<Chapter>{
-                                        new Chapter(0,Color.Yellow,3,100,new List<BallFactory>{f1,f2},new List<int>{3,3}),
-                                       new Chapter(50,Color.Red,8,100,new List<BallFactory>{f1,f2},new List<int>{1,20}),    
+                                          new Chapter(0,Color.White,3,50,new List<BallFactory>{f1,f2},new List<int>{1,0}),                                        
+                                          new Chapter(100,Color.Blue,4,50,new List<BallFactory>{f1,f2},new List<int>{8,3}),
+                                          new Chapter(130,Color.Red,8,50,new List<BallFactory>{f1,f2},new List<int>{1,20}),    
                                         };
 
 
@@ -67,6 +80,7 @@ namespace BallBattle
             return getChapter(level);
         }
 
+       
         public int getLevel() {
             return level;
         }
@@ -127,7 +141,7 @@ namespace BallBattle
    
 
             gBall.setSpeed(getCurrentChapterSpeed());
-
+            gBall.setColor(getCurrentChapterColor());
 
             return gBall;
         }

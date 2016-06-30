@@ -55,6 +55,10 @@ namespace BallBattle
             return new Color(r.Next(255),r.Next(255),r.Next(255));
         }
 
+        public static Color getBgcolor(Color c) {
+            return new Color(255-c.R,255-c.G,255-c.B);
+        }
+
 
     }
 }
