@@ -14,7 +14,7 @@ namespace BallBattle
     class PlayerBall:
         BaseBall
     {
-        public const int DEF_LIFE=3;
+        public const int DEF_LIFE=1;
 
         private static PlayerBall bb;
 

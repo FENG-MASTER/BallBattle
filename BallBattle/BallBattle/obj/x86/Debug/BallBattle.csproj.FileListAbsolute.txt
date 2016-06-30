@@ -1,11 +1,10 @@
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Images\ball.xnb
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Images\bg.xnb
+C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Images\startBackground.xnb
+C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\ScoreFont.xnb
+C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\StartFont.xnb
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\BallBattle.exe
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\BallBattle.pdb
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\obj\x86\Debug\BallBattle.exe
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\obj\x86\Debug\BallBattle.pdb
-C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\ScoreFont.xnb
-C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\obj\x86\Debug\BallBattle.csprojResolveAssemblyReference.cache
-C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Images\startBackground.xnb
-C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\StartFont.xnb

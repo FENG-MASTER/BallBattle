@@ -53,8 +53,7 @@ namespace BallBattle
             Components.Add(startComponent);
 
             Textures.init(Content.Load<Texture2D>(@"Images\\ball"),
-            Content.Load<Texture2D>(@"Images\\ball"),
-            Content.Load<Texture2D>(@"Images\\startBackground"));     //初始化全局纹理类 ,应该放在LoadContent里,但测试的时候发现会空指针,应该是先执行了  Components的LoadContent,才会这样
+            Content.Load<Texture2D>(@"Images\\ball"));     //初始化全局纹理类 ,应该放在LoadContent里,但测试的时候发现会空指针,应该是先执行了  Components的LoadContent,才会这样
 
             this.IsMouseVisible = true;
             base.Initialize();

@@ -20,9 +20,9 @@ namespace BallBattle
 
         private SpriteBatch sb;
 
-        private Textures.MyTexture bgTexture;//纹理对象,这个用来存开场背景
+        private Color r=Textures.getRandomColor();
 
-        private Point currentFrame = new Point(1, 1);//当前播放到的动画位置
+        private SpriteFont font;
 
         public EndComponent(Game game)
             : base(game)
@@ -44,7 +44,8 @@ namespace BallBattle
         protected override void LoadContent()
         {
             sb = new SpriteBatch(Game.GraphicsDevice);
-            
+
+            font = Game.Content.Load<SpriteFont>(@"Fonts\\StartFont");
             base.LoadContent();
         }
 
@@ -62,7 +63,16 @@ namespace BallBattle
 
         public override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            
+            GraphicsDevice.Clear(r);
+            Color c = new Color(1,1,1);
+            String str="you get "+PlayerBall.getInstance().getVal()+" !";
+            sb.Begin();
+
+            sb.DrawString(font, str, new Vector2(Game.Window.ClientBounds.Width / 2 - font.MeasureString(str).X / 2,
+                Game.Window.ClientBounds.Height / 2 - font.MeasureString(str).Y / 2), Color.Black);
+
+            sb.End();
             base.Draw(gameTime);
         }
     }

@@ -19,9 +19,9 @@ namespace BallBattle
     {
         private SpriteBatch sb;
 
-        private Textures.MyTexture bgTexture;//纹理对象,这个用来存开场背景
+        private Color r = Textures.getRandomColor();
 
-        private Point currentFrame = new Point(1, 1);//当前播放到的动画位置
+        private SpriteFont font;
 
         public StartComponent(Game game)
             : base(game)
@@ -42,7 +42,8 @@ namespace BallBattle
         protected override void LoadContent()
         {
             sb = new SpriteBatch(Game.GraphicsDevice);
-            bgTexture = Textures.getInstance().startBackground;
+            font = Game.Content.Load<SpriteFont>(@"Fonts\\StartFont");
+        
 
         }
 
@@ -62,26 +63,15 @@ namespace BallBattle
         public override void Draw(GameTime gameTime)
         {
 
+            GraphicsDevice.Clear(r);
+            Color c = new Color(1, 1, 1);
+            String str = "Eat More";
             sb.Begin();
-            //             sb.Draw(bgTexture.texture,
-            //                 new Vector2(Game.Window.ClientBounds.Width/2-bgTexture.texture.Width/2,
-            //                 Game.Window.ClientBounds.Height/2-bgTexture.texture.Height/2),
-            //                 
-            //                 Color.White);
-            sb.Draw(bgTexture.texture,
-                     Vector2.Zero,
-                       new Rectangle((currentFrame.X - 1) * bgTexture.sheetSize.X,
-                    (currentFrame.Y - 1) * bgTexture.sheetSize.Y, bgTexture.frameSize.X, bgTexture.frameSize.Y),
-                   Color.White,
-                     0,
-                     Vector2.Zero,
-                     Game.Window.ClientBounds.Width / bgTexture.texture.Width,
-                     SpriteEffects.None,
-                     0);
+
+            sb.DrawString(font, str, new Vector2(Game.Window.ClientBounds.Width / 2 - font.MeasureString(str).X / 2,
+                Game.Window.ClientBounds.Height / 2 - font.MeasureString(str).Y / 2), Color.White);
 
             sb.End();
-
-
             base.Draw(gameTime);
         }
 

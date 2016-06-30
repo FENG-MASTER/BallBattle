@@ -20,15 +20,6 @@
       <Time>2016-05-12T14:03:12.494822+08:00</Time>
     </Item>
     <Item>
-      <Source>Fonts\ScoreFont.spritefont</Source>
-      <Name>Fonts\ScoreFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\ScoreFont.xnb</Output>
-      <Time>2016-05-16T18:18:26.5884404+08:00</Time>
-    </Item>
-    <Item>
       <Source>Images\startBackground.png</Source>
       <Name>Images\startBackground</Name>
       <Importer>TextureImporter</Importer>
@@ -38,13 +29,22 @@
       <Time>2016-06-30T00:10:24.9832093+08:00</Time>
     </Item>
     <Item>
+      <Source>Fonts\ScoreFont.spritefont</Source>
+      <Name>Fonts\ScoreFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\ScoreFont.xnb</Output>
+      <Time>2016-06-30T15:18:41.6889486+08:00</Time>
+    </Item>
+    <Item>
       <Source>Fonts\StartFont.spritefont</Source>
       <Name>Fonts\StartFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\StartFont.xnb</Output>
-      <Time>2016-06-29T23:44:15.1505552+08:00</Time>
+      <Time>2016-06-30T15:30:55.5316758+08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
