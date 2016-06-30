@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chapters.cs" />
+    <Compile Include="EndComponent.cs" />
     <Compile Include="Factory\BallFactory.cs" />
     <Compile Include="BallComponent.cs" />
     <Compile Include="Model\BaseBall.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="ScoreBoard.cs" />
+    <Compile Include="StartComponent.cs" />
     <Compile Include="Textures.cs" />
     <Compile Include="WallManager.cs" />
   </ItemGroup>

@@ -39,7 +39,8 @@ namespace BallBattle
         }
 
         public void onDraw(SpriteBatch sb) {
-            sb.DrawString(font,"score:"+score.ToString(),Vector2.Zero,Color.White);
+            sb.DrawString(font, "score:" + score.ToString()+" \n life:" + PlayerBall.getInstance().getLife().ToString(), Vector2.Zero, Color.White);
+ 
         }
 
     }

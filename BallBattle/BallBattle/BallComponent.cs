@@ -50,6 +50,12 @@ namespace BallBattle
         {
             // TODO: Add your update code here
 
+            if(PlayerBall.isEnd==true){
+                Game1.gameState = 2;
+                //Game.Exit();
+           
+            }
+            
             List<BaseBall> removeList = new List<BaseBall>();
             player.upDate(Game.Window.ClientBounds);
 
@@ -80,7 +86,8 @@ namespace BallBattle
                             
                             
                         }
-                        Console.WriteLine("end");
+                        removeList.Add(ball);
+                        
                     }
                     
                 }
@@ -112,7 +119,7 @@ namespace BallBattle
 
         protected override void LoadContent()
         {
-            Textures.init(Game.Content.Load<Texture2D>(@"Images\\ball"), Game.Content.Load<Texture2D>(@"Images\\ball"));     //初始化全局纹理类      
+         
 
             wallmg = new WallManager(Game.Window.ClientBounds);
             sb = new SpriteBatch(Game.GraphicsDevice);
@@ -135,11 +142,15 @@ namespace BallBattle
         {
 
             sb.Begin(SpriteSortMode.FrontToBack,BlendState.AlphaBlend);
+            
             player.Draw(sb);
             foreach (BaseBall ball in ballList)
             {
                 ball.Draw(sb);
             }
+
+            //计分板
+            ScoreBoard.getInstance().onDraw(sb);
             sb.End();
 
             base.Draw(gameTime);

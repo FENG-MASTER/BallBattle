@@ -14,7 +14,13 @@ namespace BallBattle
     class PlayerBall:
         BaseBall
     {
+        public const int DEF_LIFE=3;
+
         private static PlayerBall bb;
+
+        private static int life = DEF_LIFE;
+
+        public static Boolean isEnd=false;
 
         public static PlayerBall getInstance() {
             return bb;
@@ -24,6 +30,9 @@ namespace BallBattle
         {
             bb = new PlayerBall(postion, speed, myTexture, val);
             bb.setImpact(new PlayerImpact(bb));
+            isEnd = false;
+            life = DEF_LIFE;
+
         }
         
         
@@ -64,9 +73,20 @@ namespace BallBattle
 
         public void dead() {
                //死亡
+            life--;
             val = 20;
-
+            postion.X = WallManager.wallRect.Height / 2;
+            postion.Y = WallManager.wallRect.Width / 2;
+            if(life<=0){
+                isEnd = true;
+            }
+            
         
+        }
+
+
+        public int getLife() {
+            return life;
         }
 
 

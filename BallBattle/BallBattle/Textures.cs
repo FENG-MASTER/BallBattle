@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace BallBattle
 {
     class Textures
@@ -29,9 +30,11 @@ namespace BallBattle
 
         public MyTexture playerBallTexture;
 
-        public static void init(Texture2D t1, Texture2D t2)
+        public MyTexture startBackground;
+
+        public static void init(Texture2D t1, Texture2D t2,Texture2D startBg)
         {
-            instance = new Textures(t1,t2);   
+            instance = new Textures(t1,t2,startBg);   
         
         }
 
@@ -40,9 +43,11 @@ namespace BallBattle
             return instance;
         }
 
-        private Textures(Texture2D t1,Texture2D t2) {
+        private Textures(Texture2D t1,Texture2D t2,Texture2D startBg) {
             baseBallTexture = new MyTexture(t1,new Point(200, 200), new Point(1, 1));
             playerBallTexture = new MyTexture(t2, new Point(200, 200), new Point(1, 1));
+            startBackground = new MyTexture(startBg,new Point(800,600),new Point(1,1));
+
         }
 
 
