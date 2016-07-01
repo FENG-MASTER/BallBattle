@@ -20,23 +20,23 @@ namespace BallBattle
 
         private static int life = DEF_LIFE;
 
-        public static Boolean isEnd=false;
+     //   public static int gameState=0;//0游戏中 1失败 2通关
 
         public static PlayerBall getInstance() {
             return bb;
         }
 
-        public static void init(Vector2 postion, int speed, Textures.MyTexture myTexture, int val)
+        public static void init(Vector2 postion, int speed, Resourse.MyTexture myTexture, int val)
         {
             bb = new PlayerBall(postion, speed, myTexture, val);
             bb.setImpact(new PlayerImpact(bb));
-            isEnd = false;
+       //     gameState = 0;
             life = DEF_LIFE;
 
         }
         
         
-        private PlayerBall(Vector2 postion, int speed, Textures.MyTexture myTexture,int val) 
+        private PlayerBall(Vector2 postion, int speed, Resourse.MyTexture myTexture,int val) 
             :base(Color.Black,postion,speed, myTexture,val)
         {
             
@@ -76,7 +76,8 @@ namespace BallBattle
             postion.X = WallManager.wallRect.Height / 2;
             postion.Y = WallManager.wallRect.Width / 2;
             if(life<=0){
-                isEnd = true;
+                Game1.gameState = 2;
+               // gameState=1;
             }
             
         

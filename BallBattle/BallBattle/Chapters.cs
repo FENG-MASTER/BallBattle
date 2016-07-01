@@ -38,6 +38,7 @@ namespace BallBattle
                 this.genRate=genRate;
                 this.ballsf=ballsf;
                 this.rates=rates;
+               
             }
 
         }
@@ -55,9 +56,9 @@ namespace BallBattle
 
         private Chapters(){
             //初始化关卡信息
-            BallFactory f1 = new BallFactory(Textures.getInstance().baseBallTexture, Color.White, 10, "", "LinerRoad");
+            BallFactory f1 = new BallFactory(Resourse.getInstance().baseBallTexture, Color.White, 10, "", "LinerRoad");
 
-            BallFactory f2 = new BallFactory(Textures.getInstance().baseBallTexture, Color.White, 120, "", "LinerRoad");
+            BallFactory f2 = new BallFactory(Resourse.getInstance().baseBallTexture, Color.White, 120, "", "LinerRoad");
 
             chapters = new List<Chapter>{
                                           new Chapter(0,Color.White,3,50,new List<BallFactory>{f1,f2},new List<int>{1,0}),                                        
@@ -66,12 +67,18 @@ namespace BallBattle
                                         };
 
 
-        
+            init();
         }
 
+        public void init() {
+            level = 1;
+            times = 0;
+
+        }
         private  Chapter getChapter(int num){
             if(num>chapters.Count){
-                return null;
+                Game1.gameState = 3;
+                return chapters[0];
             }
             return chapters[num-1];
         }

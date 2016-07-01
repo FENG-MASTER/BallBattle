@@ -89,7 +89,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="ScoreBoard.cs" />
     <Compile Include="StartComponent.cs" />
-    <Compile Include="Textures.cs" />
+    <Compile Include="Resourse.cs" />
     <Compile Include="WallManager.cs" />
   </ItemGroup>
   <ItemGroup>

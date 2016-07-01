@@ -19,7 +19,7 @@ namespace BallBattle
     {
         private SpriteBatch sb;
 
-        private Color r = Textures.getRandomColor();
+        private Color r = Resourse.getRandomColor();
 
         private SpriteFont font;
 

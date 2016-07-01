@@ -13,10 +13,10 @@ namespace BallBattle.Factory
 
         private String impactType;
         private String roadType;
-        private Textures.MyTexture texture;
+        private Resourse.MyTexture texture;
         private Color color=Color.White;
         private int val;
-        public BallFactory(Textures.MyTexture texture,Color c ,int val, String impactType, String roadType)
+        public BallFactory(Resourse.MyTexture texture,Color c ,int val, String impactType, String roadType)
         {
             this.color = c;
             this.val = val;

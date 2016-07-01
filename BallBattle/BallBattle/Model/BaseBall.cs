@@ -21,7 +21,7 @@ namespace BallBattle
 
 
         private Point currentFrame;//当前播放到的动画位置
-        private Textures.MyTexture myTexture;
+        private Resourse.MyTexture myTexture;
 
 
         private ImpactInterface impactInterface;//碰撞器
@@ -30,7 +30,7 @@ namespace BallBattle
 
         private Color color=Color.White;
 
-        public BaseBall(Color c,Vector2 postion, int speed,Textures.MyTexture texture,int val)
+        public BaseBall(Color c,Vector2 postion, int speed,Resourse.MyTexture texture,int val)
         {
             this.val = val;
             this.color = c;

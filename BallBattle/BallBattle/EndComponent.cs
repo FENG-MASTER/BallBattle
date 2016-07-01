@@ -20,7 +20,7 @@ namespace BallBattle
 
         private SpriteBatch sb;
 
-        private Color r=Textures.getRandomColor();
+        private Color r=Resourse.getRandomColor();
 
         private SpriteFont font;
 
@@ -66,7 +66,21 @@ namespace BallBattle
             
             GraphicsDevice.Clear(r);
             Color c = new Color(1,1,1);
-            String str="you get "+PlayerBall.getInstance().getVal()+" !";
+            String str ;
+            switch(Game1.gameState){
+                case 2:
+                    //玩家死亡
+                    str = "you dead! \nyou get " + PlayerBall.getInstance().getVal() + " !";
+                    break;
+                case 3:
+                    //通关
+                    str = "you win! \nyou get " + PlayerBall.getInstance().getVal() + " !";
+                    break;
+                default:
+                    str = "";
+                    break;
+            }
+           
             sb.Begin();
 
             sb.DrawString(font, str, new Vector2(Game.Window.ClientBounds.Width / 2 - font.MeasureString(str).X / 2,

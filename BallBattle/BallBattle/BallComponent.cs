@@ -50,11 +50,7 @@ namespace BallBattle
         {
             // TODO: Add your update code here
 
-            if(PlayerBall.isEnd==true){
-                Game1.gameState = 2;
-                //Game.Exit();
-           
-            }
+       
             
             List<BaseBall> removeList = new List<BaseBall>();
             PlayerBall.getInstance().upDate(Game.Window.ClientBounds);
@@ -124,7 +120,7 @@ namespace BallBattle
          
             wallmg = new WallManager(Game.Window.ClientBounds);
             sb = new SpriteBatch(Game.GraphicsDevice);
-            PlayerBall.init(new Vector2(100, 100), 6, Textures.getInstance().playerBallTexture, 50);
+            PlayerBall.init(new Vector2(100, 100), 6, Resourse.getInstance().playerBallTexture, 50);
             
             base.LoadContent();
         }
@@ -132,7 +128,7 @@ namespace BallBattle
 
         public override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Textures.getBgcolor(Chapters.getInstance().getCurrentChapterColor()));
+            GraphicsDevice.Clear(Resourse.getBgcolor(Chapters.getInstance().getCurrentChapterColor()));
             sb.Begin(SpriteSortMode.FrontToBack,BlendState.AlphaBlend);
 
             PlayerBall.getInstance().Draw(sb);
@@ -146,6 +142,10 @@ namespace BallBattle
             sb.End();
 
             base.Draw(gameTime);
+        }
+
+        public void clear() {
+            ballList.Clear();
         }
     }
 }

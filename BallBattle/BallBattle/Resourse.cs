@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BallBattle
 {
-    class Textures
+    class Resourse
     {
        
         public  class MyTexture {
@@ -24,7 +24,7 @@ namespace BallBattle
         
         }
 
-        private static Textures instance;
+        private static Resourse instance;
 
         public MyTexture baseBallTexture;
 
@@ -34,16 +34,16 @@ namespace BallBattle
 
         public static void init(Texture2D t1, Texture2D t2)
         {
-            instance = new Textures(t1,t2);   
+            instance = new Resourse(t1,t2);   
         
         }
 
-        public static Textures getInstance()
+        public static Resourse getInstance()
         {
             return instance;
         }
 
-        private Textures(Texture2D t1,Texture2D t2) {
+        private Resourse(Texture2D t1,Texture2D t2) {
             baseBallTexture = new MyTexture(t1,new Point(200, 200), new Point(1, 1));
             playerBallTexture = new MyTexture(t2, new Point(200, 200), new Point(1, 1));
           
