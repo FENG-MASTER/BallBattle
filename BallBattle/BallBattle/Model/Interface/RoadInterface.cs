@@ -11,7 +11,7 @@ namespace BallBattle.Model.Interface
 
         protected BaseBall ball;
 
-         private int times_out=0;
+         protected int times_out=0;
          
         public RoadInterface(BaseBall ball)
         {
@@ -22,7 +22,8 @@ namespace BallBattle.Model.Interface
             return Vector2.Zero;
        }
 
-        public Vector2 getPosition() {
+        public virtual Vector2 getPosition()
+        {
             return getRandPostion(new Rectangle(0, 0, 
                 (int)(ball.getRect().Width*ball.scale),
                 (int)(ball.getRect().Height*ball.scale)));

@@ -5,6 +5,10 @@ using System.Text;
 
 namespace BallBattle.Model.Interface
 {
+    /*
+     * 线性路径器,按照竖着方向行走
+     * 
+     */
     class PlayerImpact
         :ImpactInterface
     {

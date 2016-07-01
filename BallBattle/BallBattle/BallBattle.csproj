@@ -78,6 +78,7 @@
     <Compile Include="BallComponent.cs" />
     <Compile Include="Model\BaseBall.cs" />
     <Compile Include="Model\Interface\ImpactInterface.cs" />
+    <Compile Include="Model\Interface\LinerRoad.cs" />
     <Compile Include="Model\Interface\PlayerImpact.cs" />
     <Compile Include="Model\Interface\RandomRoad.cs" />
     <Compile Include="Model\Interface\RoadInterface.cs" />

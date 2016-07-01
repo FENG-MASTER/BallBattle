@@ -44,8 +44,6 @@ namespace BallBattle
         
         }
 
-       
-
         public override Vector2 getDirection()
         {
             Vector2 v = new Vector2(0,0);

@@ -47,14 +47,14 @@ namespace BallBattle
         public BaseBall() {
            
             this.speed = 1;
-          
+            val = 1;
             this.myTexture = null;
             this.currentFrame = new Point(1,1);
             impactInterface = new ImpactInterface(this);
             roadInterface = new RoadInterface(this);
             scale = ((float)this.rect.Height) / myTexture.texture.Height;
             this.postion = roadInterface.getPosition(); 
-            val = 1;
+            
             
         }
 
@@ -142,6 +142,8 @@ namespace BallBattle
 
         public void setRoad(RoadInterface road) {
             this.roadInterface = road;
+            this.postion = roadInterface.getPosition();
+            
         }
 
 

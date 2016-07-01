@@ -46,6 +46,10 @@ namespace BallBattle.Factory
                     ball.setRoad(new RandomRoad(ball));
                     break;
 
+                case "LinerRoad":
+                    ball.setRoad(new LinerRoad(ball));
+                    break;
+
                 default:
                     ball.setRoad(new RandomRoad(ball));
                     break;

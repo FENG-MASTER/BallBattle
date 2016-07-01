@@ -55,9 +55,9 @@ namespace BallBattle
 
         private Chapters(){
             //初始化关卡信息
-            BallFactory f1 = new BallFactory(Textures.getInstance().baseBallTexture, Color.White, 10, "", "");
+            BallFactory f1 = new BallFactory(Textures.getInstance().baseBallTexture, Color.White, 10, "", "LinerRoad");
 
-            BallFactory f2 = new BallFactory(Textures.getInstance().baseBallTexture, Color.White, 120, "", "");
+            BallFactory f2 = new BallFactory(Textures.getInstance().baseBallTexture, Color.White, 120, "", "LinerRoad");
 
             chapters = new List<Chapter>{
                                           new Chapter(0,Color.White,3,50,new List<BallFactory>{f1,f2},new List<int>{1,0}),                                        
