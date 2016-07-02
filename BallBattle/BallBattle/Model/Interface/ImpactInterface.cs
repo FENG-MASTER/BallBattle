@@ -17,7 +17,7 @@ namespace BallBattle.Model.Interface
        public virtual Boolean impact(BaseBall otherBall) {
            if (ball.getVal() < otherBall.getVal())
            {
-               otherBall.addVal(ball.getVal());
+               otherBall.addVal(ball.getVal()/10);
                return true;
            }
            else {

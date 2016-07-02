@@ -32,9 +32,11 @@ namespace BallBattle
 
         public MyTexture startBackground;
 
-        public static void init(Texture2D t1, Texture2D t2)
+        public MyTexture gameBackground;
+
+        public static void init(Texture2D bg,Texture2D t1, Texture2D t2)
         {
-            instance = new Resourse(t1,t2);   
+            instance = new Resourse(bg,t1,t2);   
         
         }
 
@@ -43,20 +45,16 @@ namespace BallBattle
             return instance;
         }
 
-        private Resourse(Texture2D t1,Texture2D t2) {
-            baseBallTexture = new MyTexture(t1,new Point(200, 200), new Point(1, 1));
-            playerBallTexture = new MyTexture(t2, new Point(200, 200), new Point(1, 1));
-          
+        private Resourse(Texture2D bg,Texture2D t1,Texture2D t2) {
+            baseBallTexture = new MyTexture(t1,new Point(512, 298), new Point(2, 2));
+            playerBallTexture = new MyTexture(t2, new Point(512, 298), new Point(2, 2));
+            gameBackground = new MyTexture(bg, new Point(800,600), new Point(1, 1)); ;
 
         }
 
         public static Color getRandomColor() {
             Random r = new Random();
             return new Color(r.Next(255),r.Next(255),r.Next(255));
-        }
-
-        public static Color getBgcolor(Color c) {
-            return new Color(255-c.R,255-c.G,255-c.B);
         }
 
 

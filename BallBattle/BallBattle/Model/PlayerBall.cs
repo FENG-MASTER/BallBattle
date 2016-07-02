@@ -20,6 +20,8 @@ namespace BallBattle
 
         private static int life = DEF_LIFE;
 
+       
+
      //   public static int gameState=0;//0游戏中 1失败 2通关
 
         public static PlayerBall getInstance() {
@@ -30,19 +32,22 @@ namespace BallBattle
         {
             bb = new PlayerBall(postion, speed, myTexture, val);
             bb.setImpact(new PlayerImpact(bb));
-       //     gameState = 0;
             life = DEF_LIFE;
 
         }
         
         
         private PlayerBall(Vector2 postion, int speed, Resourse.MyTexture myTexture,int val) 
-            :base(Color.Black,postion,speed, myTexture,val)
+            :base(Color.White,postion,speed, myTexture,val)
         {
             
         
         
         }
+
+
+  
+        
 
         public override Vector2 getDirection()
         {
@@ -58,10 +63,12 @@ namespace BallBattle
             }
             if (state.IsKeyDown(Keys.Right))
             {
+                LR = 2;
                 v.X = 1;
             }
             if (state.IsKeyDown(Keys.Left))
             {
+                LR = 0;
                 v.X = -1;
             }
             return v;

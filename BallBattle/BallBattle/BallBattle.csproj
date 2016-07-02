@@ -75,7 +75,8 @@
     <Compile Include="Chapters.cs" />
     <Compile Include="EndComponent.cs" />
     <Compile Include="Factory\BallFactory.cs" />
-    <Compile Include="BallComponent.cs" />
+    <Compile Include="Model\Interface\SubImpact.cs" />
+    <Compile Include="MyGameComponent.cs" />
     <Compile Include="Model\BaseBall.cs" />
     <Compile Include="Model\Interface\ImpactInterface.cs" />
     <Compile Include="Model\Interface\LinerRoad.cs" />
@@ -125,6 +126,9 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

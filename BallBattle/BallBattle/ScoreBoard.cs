@@ -11,19 +11,21 @@ namespace BallBattle
     {
         private int score = 0;
         private SpriteFont font;
+        private SpriteFont bigFont;
 
         private static ScoreBoard instance=null;
 
-        private ScoreBoard(SpriteFont font) {
+        private ScoreBoard(SpriteFont font,SpriteFont bigFont) {
             this.font = font;
+            this.bigFont = bigFont;
         }
 
         public void upDate() {
             score = PlayerBall.getInstance().getVal();
         }
 
-        public static void init(SpriteFont font) {
-            instance = new ScoreBoard(font);
+        public static void init(SpriteFont font,SpriteFont bigFont) {
+            instance = new ScoreBoard(font,bigFont);
         }
 
         public static ScoreBoard getInstance() {
@@ -39,7 +41,27 @@ namespace BallBattle
         }
 
         public void onDraw(SpriteBatch sb) {
-            sb.DrawString(font, "score:" + score.ToString()+" \n life:" + PlayerBall.getInstance().getLife().ToString(), Vector2.Zero, Color.White);
+            sb.DrawString(
+                font, 
+                "score:" + score.ToString()+" \n life:" + PlayerBall.getInstance().getLife().ToString(), 
+                Vector2.Zero,
+                Color.White,
+                0,
+                Vector2.Zero,
+                1,
+                SpriteEffects.None,
+                1);
+            
+            sb.DrawString(
+                 bigFont,
+                 Chapters.getInstance().getLevel()+"",
+                 new Vector2(WallManager.wallRect.Width/2,WallManager.wallRect.Height/2),
+                 Chapters.getInstance().getCurrentChapterColor(),
+                 0,
+                 Vector2.Zero,
+                 1,
+                 SpriteEffects.None,
+                 1);
  
         }
 

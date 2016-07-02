@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BallBattle.MyGameComponent">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAAAQAwACAAAAAAAAAAAACAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>MyGameComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.Chapters">
+    <Position X="9.5" Y="8.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="BallBattle.Chapters.Chapter">
+        <TypeIdentifier>
+          <NewMemberFileName>Chapters.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAEAIAQAAAAEACAAAAgFAAAYAAAAAAACQQQA=</HashCode>
+      <FileName>Chapters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.EndComponent">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAwACAAAAAAAAAAAAAAAAAAABAAAAAAQ=</HashCode>
+      <FileName>EndComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.Game1">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEEAAAAAAAwAAAAAAEAAAAgAAAAgAAAAgAAAAAAQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.BaseBall">
+    <Position X="4.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIIgIgCAAAgAAAEAAIAAKIBBVAQCAAAAAAgAMABA=</HashCode>
+      <FileName>Model\BaseBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.PlayerBall">
+    <Position X="6.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAgAAAgABAAAAAAAAAAAAAAAAAYIAAAAAAABAAA=</HashCode>
+      <FileName>Model\PlayerBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.Program" Collapsed="true">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.Resourse">
+    <Position X="11.25" Y="8.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="BallBattle.Resourse.MyTexture" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Resourse.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAIAAEAAAACAAAAAAABAAAYAAAABAAAAAAA=</HashCode>
+      <FileName>Resourse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.ScoreBoard">
+    <Position X="14.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAEAAAAAIAAAAAAFgAAYQAAAAAAAEAAA=</HashCode>
+      <FileName>ScoreBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.StartComponent">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAwACAAAAAAAAAAAAAAAAAAABAAAAAAQ=</HashCode>
+      <FileName>StartComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.WallManager">
+    <Position X="13" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAQAA=</HashCode>
+      <FileName>WallManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.Factory.BallFactory">
+    <Position X="6.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAIAAAAAAgCAAARAAAAAAAA=</HashCode>
+      <FileName>Factory\BallFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.Model.Interface.ImpactInterface">
+    <Position X="0.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Interface\ImpactInterface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.Model.Interface.LinerRoad">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAgAAAAAIAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Interface\LinerRoad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.Model.Interface.PlayerImpact">
+    <Position X="0.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Interface\PlayerImpact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.Model.Interface.RandomRoad">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAEAAAAAAAAAAAACABAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Interface\RandomRoad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.Model.Interface.RoadInterface">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAoAgAAAAAAAAAAAAAAAAAAAABAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Interface\RoadInterface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallBattle.Model.Interface.Rush">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Interface\Rush.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

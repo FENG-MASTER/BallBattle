@@ -9,3 +9,4 @@ C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\obj\x86\Debug\Micr
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\obj\x86\Debug\BallBattle.exe
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\obj\x86\Debug\BallBattle.pdb
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\obj\x86\Debug\BallBattle.csprojResolveAssemblyReference.cache
+C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\BigFont.xnb

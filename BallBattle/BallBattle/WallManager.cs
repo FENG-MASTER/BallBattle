@@ -22,7 +22,7 @@ namespace BallBattle
         
                 if (oldPo.X < 0)
                 {
-                    oldPo.X = 0;
+                    oldPo.X = wallRect.Width - ball.getRect().Width;
                 }
                 if (oldPo.Y < 0)
                 {
@@ -30,7 +30,7 @@ namespace BallBattle
                 }
                 if (oldPo.X >( wallRect.Width-ball.getRect().Width))
                 {
-                    oldPo.X = (wallRect.Width - ball.getRect().Width);
+                    oldPo.X = (ball.getRect().Width);
                 }
                 if (oldPo.Y > (wallRect.Height-ball.getRect().Height))
                 {

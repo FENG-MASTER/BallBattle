@@ -20,7 +20,7 @@ namespace BallBattle
         protected int val;//先假设val从1-100分吧,分数决定大小
 
 
-        private Point currentFrame;//当前播放到的动画位置
+        protected Point currentFrame;//当前播放到的动画位置
         private Resourse.MyTexture myTexture;
 
 
@@ -29,6 +29,10 @@ namespace BallBattle
         private RoadInterface roadInterface;//路径器
 
         private Color color=Color.White;
+
+        private int showSpeed = 9;
+
+        protected int LR = 0;//鱼的左右方向
 
         public BaseBall(Color c,Vector2 postion, int speed,Resourse.MyTexture texture,int val)
         {
@@ -69,9 +73,14 @@ namespace BallBattle
             postion += (getDirection() * speed);
 
             updateRect();
-           
 
-           
+
+            showSpeed++;
+
+            if(showSpeed<10){
+                return  ;
+            }
+
             currentFrame.X++;
             if (currentFrame.X > myTexture.sheetSize.X)
             {
@@ -83,6 +92,8 @@ namespace BallBattle
                     currentFrame.X = 1;
                 }
             }
+            showSpeed = 1;
+
         
         }
 
@@ -107,18 +118,19 @@ namespace BallBattle
            return roadInterface.getDirection();
         }
 
-        public void Draw(SpriteBatch spriteBatch) {
-
+        public  void Draw(SpriteBatch spriteBatch) {
             spriteBatch.Draw(myTexture.texture,
                 postion,
-                new Rectangle((currentFrame.X - 1) * myTexture.sheetSize.X, 
-                    (currentFrame.Y - 1) * myTexture.sheetSize.Y, myTexture.frameSize.X, myTexture.frameSize.Y),
+                new Rectangle((currentFrame.X - 1) * myTexture.frameSize.X,
+                    (currentFrame.Y - 1 + LR) * myTexture.frameSize.Y,
+                    myTexture.frameSize.X, 
+                    myTexture.frameSize.Y),
                 color,
                 0,
                 Vector2.Zero,
                 scale,
                 SpriteEffects.None,
-                0);
+                1);
 
 
            
@@ -153,7 +165,7 @@ namespace BallBattle
             this.rect.Y = (int)postion.Y;
             this.rect.Height = (int)(val * (100 / (WallManager.wallRect.Height / 4.0)));
             this.rect.Width = this.rect.Height;
-            scale = ((float)this.rect.Height) / myTexture.texture.Height;
+            scale = ((float)this.rect.Height) / myTexture.frameSize.Y;
         }
 
         public Rectangle getRect() {

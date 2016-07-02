@@ -1,5 +1,6 @@
 Content\Images\ball.xnb
-Content\Images\bg.xnb
 Content\Images\startBackground.xnb
 Content\Fonts\ScoreFont.xnb
 Content\Fonts\StartFont.xnb
+Content\Images\bg.xnb
+Content\Fonts\BigFont.xnb

@@ -8,28 +8,33 @@ using System.Text;
 
 namespace BallBattle.Factory
 {
+
+    /*球工厂类,用于生成特定组合形式的球
+     */
     class BallFactory
     {
 
-        private String impactType;
-        private String roadType;
-        private Resourse.MyTexture texture;
-        private Color color=Color.White;
+        private String impactType;//碰撞器
+        private String roadType;//路径器
+        private Resourse.MyTexture texture;//纹理
+        private Color color=Color.White;//颜色
         private int val;
-        public BallFactory(Resourse.MyTexture texture,Color c ,int val, String impactType, String roadType)
+        public BallFactory(Resourse.MyTexture texture,Color c , String impactType, String roadType)
         {
             this.color = c;
-            this.val = val;
             this.texture = texture;
             this.impactType = impactType;
             this.roadType = roadType;
             
         }
 
-        public BaseBall built() {
+        public BaseBall built(int val) {
             BaseBall ball = new BaseBall(color,Vector2.Zero,0,texture,val);
             ball.setColor(color);
             switch(impactType){
+                case "SubImpact":
+                    ball.setImpact(new SubImpact(ball));
+                    break;
                 default:
                     ball.setImpact(new ImpactInterface(ball));
                     break;

@@ -8,16 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Images\ball.xnb</Output>
-      <Time>2016-06-29T22:14:16.1168126+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Images\bg.jpg</Source>
-      <Name>Images\bg</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Images\bg.xnb</Output>
-      <Time>2016-05-12T14:03:12.494822+08:00</Time>
+      <Time>2016-07-02T11:29:32.2566874+08:00</Time>
     </Item>
     <Item>
       <Source>Images\startBackground.png</Source>
@@ -45,6 +36,24 @@
       <Options>None</Options>
       <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\StartFont.xnb</Output>
       <Time>2016-06-30T15:30:55.5316758+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\bg.png</Source>
+      <Name>Images\bg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Images\bg.xnb</Output>
+      <Time>2016-07-02T13:26:10.7329741+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\BigFont.spritefont</Source>
+      <Name>Fonts\BigFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\BigFont.xnb</Output>
+      <Time>2016-07-02T13:39:47.2749498+08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
