@@ -24,6 +24,8 @@ namespace BallBattle
         MyGameComponent gameComponent;//游戏
         GameComponent endComponent;//游戏结束
 
+        SoundEffectInstance bgm;
+
         public static int gameState = 0;//记录游戏状态,0是开始界面,1是游戏进行时候,2是游戏结束画面(失败) 3是通关画面
 
         public Game1()
@@ -50,9 +52,7 @@ namespace BallBattle
             endComponent = new EndComponent(this);
             Components.Add(startComponent);
 
-            Resourse.init(Content.Load<Texture2D>(@"Images\\bg"),
-                Content.Load<Texture2D>(@"Images\\ball"),
-            Content.Load<Texture2D>(@"Images\\ball"));     //初始化全局纹理类 ,应该放在LoadContent里,但测试的时候发现会空指针,应该是先执行了  Components的LoadContent,才会这样
+            Resourse.init(Content);     //初始化全局纹理类 ,应该放在LoadContent里,但测试的时候发现会空指针,应该是先执行了  Components的LoadContent,才会这样
 
             this.IsMouseVisible = true;
             base.Initialize();
@@ -67,9 +67,10 @@ namespace BallBattle
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-    
-            ScoreBoard.init(Content.Load<SpriteFont>(@"Fonts\\ScoreFont"),Content.Load<SpriteFont>(@"Fonts\\BigFont"));
 
+            ScoreBoard.init(Resourse.getInstance().scoreFont, Resourse.getInstance().bigFont);
+            bgm = Resourse.getInstance().bgm.CreateInstance();
+            
             base.LoadContent();
 
         }
@@ -113,13 +114,14 @@ namespace BallBattle
                         Chapters.getInstance().init();
                         gameComponent.clear();
                         PlayerBall.init(new Vector2(100, 100), 6, Resourse.getInstance().playerBallTexture, 50);
+                        bgm.Play();
                     }
                     break;
                 case 1:
                     break;
                 case 2:
                 case 3:
-                        
+                         bgm.Stop();
                         Components.RemoveAt(0);
                         Components.Add(endComponent);
                     if(keystate.IsKeyDown(Keys.Enter)){

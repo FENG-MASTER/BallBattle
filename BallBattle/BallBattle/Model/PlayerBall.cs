@@ -14,7 +14,7 @@ namespace BallBattle
     class PlayerBall:
         BaseBall
     {
-        public const int DEF_LIFE=1;
+        public const int DEF_LIFE=3;
 
         private static PlayerBall bb;
 
@@ -22,7 +22,7 @@ namespace BallBattle
 
        
 
-     //   public static int gameState=0;//0游戏中 1失败 2通关
+   
 
         public static PlayerBall getInstance() {
             return bb;
@@ -63,12 +63,12 @@ namespace BallBattle
             }
             if (state.IsKeyDown(Keys.Right))
             {
-                LR = 2;
+                LR = -1;
                 v.X = 1;
             }
             if (state.IsKeyDown(Keys.Left))
             {
-                LR = 0;
+                LR = 1;
                 v.X = -1;
             }
             return v;
@@ -79,20 +79,35 @@ namespace BallBattle
         public void dead() {
                //死亡
             life--;
-            val = 20;
+            if (life <= 0)
+            {
+                Game1.gameState = 2;
+                Resourse.getInstance().endSound.Play();//播放死亡音效
+                return;
+            }
+
+            val = 50;
             postion.X = WallManager.wallRect.Height / 2;
             postion.Y = WallManager.wallRect.Width / 2;
-            if(life<=0){
-                Game1.gameState = 2;
 
-            }
-            
         
         }
 
 
         public int getLife() {
             return life;
+        }
+
+
+        public override void addVal(int add)
+        {
+            if(add>0){
+              Resourse.getInstance().eat.Play();
+            }else{
+               Resourse.getInstance().deadSound.Play();
+            }
+            
+            base.addVal(add);
         }
 
 

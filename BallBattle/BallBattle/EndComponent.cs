@@ -45,7 +45,7 @@ namespace BallBattle
         {
             sb = new SpriteBatch(Game.GraphicsDevice);
 
-            font = Game.Content.Load<SpriteFont>(@"Fonts\\StartFont");
+            font = Resourse.getInstance().startFont;
             base.LoadContent();
         }
 

@@ -26,7 +26,7 @@ namespace BallBattle.Model.Interface
 
         public override Vector2 getPosition()
         {
-            Vector2 v = new Vector2(new Random().Next(WallManager.wallRect.Width), ball.getRect().Height * ball.scale);
+            Vector2 v = new Vector2(new Random().Next(WallManager.wallRect.Width), ball.getRect().Height);
             Console.WriteLine(v);
             return v;
         }

@@ -36,9 +36,6 @@ namespace BallBattle
             score += add;
         }
 
-        public void subScore(int sub) {
-            score -= sub;
-        }
 
         public void onDraw(SpriteBatch sb) {
             sb.DrawString(

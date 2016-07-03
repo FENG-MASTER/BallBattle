@@ -103,7 +103,7 @@ namespace BallBattle
         
         }
 
-        public void addVal(int add)
+        public virtual void addVal(int add)
         {
             val += add;
 
@@ -122,18 +122,16 @@ namespace BallBattle
             spriteBatch.Draw(myTexture.texture,
                 postion,
                 new Rectangle((currentFrame.X - 1) * myTexture.frameSize.X,
-                    (currentFrame.Y - 1 + LR) * myTexture.frameSize.Y,
+                    (currentFrame.Y - 1) * myTexture.frameSize.Y,
                     myTexture.frameSize.X, 
                     myTexture.frameSize.Y),
                 color,
                 0,
                 Vector2.Zero,
                 scale,
-                SpriteEffects.None,
+                LR==1?SpriteEffects.None:SpriteEffects.FlipHorizontally,
                 1);
-
-
-           
+            
 
         }
 

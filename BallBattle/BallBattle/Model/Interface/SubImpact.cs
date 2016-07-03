@@ -20,6 +20,7 @@ namespace BallBattle.Model.Interface
             if (ball.getVal() < otherBall.getVal())
             {
                 otherBall.addVal(-ball.getVal() / 10);
+               
                 return true;
             }
             else

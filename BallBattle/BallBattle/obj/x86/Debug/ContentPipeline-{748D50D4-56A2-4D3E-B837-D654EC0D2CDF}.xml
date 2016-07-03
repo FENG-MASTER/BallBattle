@@ -55,6 +55,42 @@
       <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\BigFont.xnb</Output>
       <Time>2016-07-02T13:39:47.2749498+08:00</Time>
     </Item>
+    <Item>
+      <Source>Sound\eat.wav</Source>
+      <Name>Sound\eat</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Sound\eat.xnb</Output>
+      <Time>2016-07-03T15:24:55.2101231+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\bgm.wav</Source>
+      <Name>Sound\bgm</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Sound\bgm.xnb</Output>
+      <Time>2016-07-03T16:15:22.8664056+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\dead.wav</Source>
+      <Name>Sound\dead</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Sound\dead.xnb</Output>
+      <Time>2016-07-03T16:23:27.8429925+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\end.wav</Source>
+      <Name>Sound\end</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Sound\end.xnb</Output>
+      <Time>2016-07-03T16:18:47.7722312+08:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{748D50D4-56A2-4D3E-B837-D654EC0D2CDF}</ContentProjectGUID>

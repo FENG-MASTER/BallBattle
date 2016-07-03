@@ -10,3 +10,7 @@ C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\obj\x86\Debug\Ball
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\obj\x86\Debug\BallBattle.pdb
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\obj\x86\Debug\BallBattle.csprojResolveAssemblyReference.cache
 C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\BigFont.xnb
+C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Sound\bgm.xnb
+C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Sound\eat.xnb
+C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Sound\dead.xnb
+C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Sound\end.xnb

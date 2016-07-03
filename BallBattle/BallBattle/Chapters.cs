@@ -28,12 +28,14 @@ namespace BallBattle
             public Color color;//关卡初始颜色
             public int speed;//关卡的球的基准速度
             public int genRate;//生成频率
-            public List<BallFactory> ballsf;
+            public List<BallFactory> ballsf;//工厂对象list
             public List<int> rates;
+            public int topLimit;
+            public int lowLimit;
 
 
 
-            public Chapter(int p, Color c, int speed, int genRate, List<BallFactory> ballsf, List<int> rates)
+            public Chapter(int p, Color c, int speed, int genRate, int lLimit,int tLimit, List<BallFactory> ballsf, List<int> rates)
             {
                 point = p;
                 color = c;
@@ -41,6 +43,8 @@ namespace BallBattle
                 this.genRate = genRate;
                 this.ballsf = ballsf;
                 this.rates = rates;
+                this.topLimit = tLimit;
+                this.lowLimit = lLimit;
 
             }
 
@@ -75,9 +79,13 @@ namespace BallBattle
 
             initFactory();
             chapters = new List<Chapter>{
-                                          new Chapter(0,Color.White,3,50,new List<BallFactory>{f1},new List<int>{1}),                                        
-                                          new Chapter(100,Color.Blue,4,50,new List<BallFactory>{f1,f4},new List<int>{8,3}),
-                                          new Chapter(130,Color.Red,8,50,new List<BallFactory>{f1,f2},new List<int>{1,20}),    
+                                          new Chapter(0,Color.White,2,50,-1,1,new List<BallFactory>{f1},new List<int>{1}),                                        
+                                          new Chapter(100,Color.Blue,3,50,-3,2,new List<BallFactory>{f1,f4},new List<int>{8,3}),
+                                          new Chapter(130,Color.Red,4,50,-1,1,new List<BallFactory>{f2,f5},new List<int>{1,1}), 
+                                          new Chapter(160,Color.Red,5,50,-1,1,new List<BallFactory>{f3,f6},new List<int>{1,20}), 
+                                          new Chapter(200,Color.Red,6,50,-1,1,new List<BallFactory>{f1,f2},new List<int>{1,20}), 
+                                          new Chapter(230,Color.Red,8,50,-1,1,new List<BallFactory>{f1,f2},new List<int>{1,20}), 
+                                          new Chapter(300,Color.Red,8,50,-1,1,new List<BallFactory>{f1,f2,f2,f3,f4,f5,f6},new List<int>{1,1,1,1,1,1}), 
                                         };
 
 
@@ -116,7 +124,7 @@ namespace BallBattle
         }
         private Chapter getChapter(int num)
         {
-            if (num > chapters.Count)
+            if (num >= chapters.Count)
             {
                 Game1.gameState = 3;
                 return chapters[0];
@@ -150,6 +158,16 @@ namespace BallBattle
             return getCurrentChapter().genRate;
         }
 
+        public int getCurrentChapterTopLimit()
+        {
+            return getCurrentChapter().topLimit;
+        }
+
+        public int getCurrentChapterLowLimit()
+        {
+            return getCurrentChapter().lowLimit;
+        }
+
         public Color getCurrentChapterColor()
         {
             return getCurrentChapter().color;
@@ -178,7 +196,7 @@ namespace BallBattle
 
             int ran = r.Next(0, sum);
 
-            int datVal = r.Next(3)==1?-10:10;
+            int datVal = r.Next(getCurrentChapterLowLimit(),getCurrentChapterTopLimit())*2;
 
             int a = 0;
             for (int i = 0; i < rates.Count; i++)
@@ -186,7 +204,7 @@ namespace BallBattle
 
                 if (a <= ran && (a + rates[i]) >= ran)
                 {
-                    gBall = getCurrentChapter().ballsf[i].built(PlayerBall.getInstance().getVal()+r.Next(8)*datVal);
+                    gBall = getCurrentChapter().ballsf[i].built(PlayerBall.getInstance().getVal() + datVal);
                     break;
                 }
                 a += rates[i];
@@ -211,7 +229,7 @@ namespace BallBattle
 
             if (level == chapters.Count)
             {
-                //TODO:游戏胜利
+                
                 Game1.gameState = 3;
             }
 
