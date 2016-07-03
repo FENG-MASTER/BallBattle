@@ -65,7 +65,7 @@ namespace BallBattle
         {
             
             GraphicsDevice.Clear(r);
-            Color c = new Color(1,1,1);
+
             String str ;
             switch(Game1.gameState){
                 case 2:

@@ -212,7 +212,7 @@ namespace BallBattle
             if (level == chapters.Count)
             {
                 //TODO:游戏胜利
-
+                Game1.gameState = 3;
             }
 
 

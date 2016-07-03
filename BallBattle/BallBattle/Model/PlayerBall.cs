@@ -84,7 +84,7 @@ namespace BallBattle
             postion.Y = WallManager.wallRect.Width / 2;
             if(life<=0){
                 Game1.gameState = 2;
-               // gameState=1;
+
             }
             
         

@@ -110,6 +110,8 @@ namespace BallBattle
                         gameState = 1;//½øÈëÓÎÏ·×´Ì¬
                         Components.RemoveAt(0);
                         Components.Add(gameComponent);
+                        Chapters.getInstance().init();
+                        gameComponent.clear();
                         PlayerBall.init(new Vector2(100, 100), 6, Resourse.getInstance().playerBallTexture, 50);
                     }
                     break;
@@ -117,12 +119,13 @@ namespace BallBattle
                     break;
                 case 2:
                 case 3:
-                        gameState = 0;
+                        
                         Components.RemoveAt(0);
-                        Components.Add(startComponent);
-                        PlayerBall.init(new Vector2(100, 100), 6, Resourse.getInstance().playerBallTexture, 50);
-                        Chapters.getInstance().init();
-                        gameComponent.clear();
+                        Components.Add(endComponent);
+                    if(keystate.IsKeyDown(Keys.Enter)){
+                        gameState = 0;
+                    }
+                        
                     break;
             }
 
