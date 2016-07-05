@@ -69,12 +69,8 @@ namespace BallBattle
          */
 
         public void upDate(Rectangle rect) {
-
-            postion += (getDirection() * speed);
-
             updateRect();
-
-
+            postion += (getDirection() * speed);
             showSpeed++;
 
             if(showSpeed<10){
@@ -103,7 +99,7 @@ namespace BallBattle
         
         }
 
-        public virtual void addVal(int add)
+        public virtual void addVal(int add,bool isSound=true)
         {
             val += add;
 
@@ -115,7 +111,15 @@ namespace BallBattle
         }
 
        virtual public Vector2 getDirection() {
-           return roadInterface.getDirection();
+           Vector2 v=roadInterface.getDirection();
+           if (v.X > 0)
+           {
+               LR = 0;
+           }
+           else {
+               LR = 1;
+           }
+           return v;
         }
 
         public  void Draw(SpriteBatch spriteBatch) {

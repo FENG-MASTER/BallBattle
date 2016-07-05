@@ -21,14 +21,14 @@ namespace BallBattle.Model.Interface
         public override Vector2 getDirection()
         {
 
-            return new Vector2(0, direction*1);
+            return new Vector2(direction*1,0 );
         }
 
         public override Vector2 getPosition()
         {
-            Vector2 v = new Vector2(new Random().Next(WallManager.wallRect.Width), ball.getRect().Height);
-            Console.WriteLine(v);
-            return v;
+            return getLinerPostion(new Rectangle(0, 0,
+                (int)(ball.getRect().Width * ball.scale),
+                (int)(ball.getRect().Height * ball.scale)));
         }
 
         public override bool isOutDo()
@@ -45,7 +45,13 @@ namespace BallBattle.Model.Interface
                 return true;
             }
 
-            return base.isOutDo();
+            
+        }
+
+        private Vector2 getLinerPostion(Rectangle rect)
+        {
+            return new Vector2(rect.Width,
+                        (float)(new Random().Next((int)(WallManager.wallRect.Height - rect.Width))));
         }
 
     }

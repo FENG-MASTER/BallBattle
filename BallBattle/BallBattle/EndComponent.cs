@@ -70,11 +70,12 @@ namespace BallBattle
             switch(Game1.gameState){
                 case 2:
                     //玩家死亡
-                    str = "you dead! \nyou get " + PlayerBall.getInstance().getVal() + " !";
+                    str = "you dead! \nyou get " + ScoreBoard.getInstance().addScore(0) + " !";
                     break;
                 case 3:
                     //通关
-                    str = "you win! \nyou get " + PlayerBall.getInstance().getVal() + " !";
+                    str = "you win! \nyou get " + ScoreBoard.getInstance().addScore(0) + " !";
+                    Resourse.getInstance().victory.Play();
                     break;
                 default:
                     str = "";

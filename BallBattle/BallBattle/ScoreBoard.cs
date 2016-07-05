@@ -20,8 +20,15 @@ namespace BallBattle
             this.bigFont = bigFont;
         }
 
+        public void init() {
+            score = 0;        
+        }
+
         public void upDate() {
-            score = PlayerBall.getInstance().getVal();
+            if(Game1.gameState!=1){
+                init();
+            }
+           // score = PlayerBall.getInstance().getVal();
         }
 
         public static void init(SpriteFont font,SpriteFont bigFont) {
@@ -32,9 +39,12 @@ namespace BallBattle
             return instance;
         }
 
-        public void addScore(int add){
+        public int addScore(int add){
             score += add;
+            return score;
         }
+
+        
 
 
         public void onDraw(SpriteBatch sb) {

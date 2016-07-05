@@ -48,20 +48,26 @@ namespace BallBattle
 
         public SoundEffect endSound;
 
+        public SoundEffect levelUp;
+
+        public SoundEffect victory;
+
         public static void init(ContentManager cm)
         {
         
             instance = new Resourse(
                 cm.Load<Texture2D>(@"Images\\bg"),
                 cm.Load<Texture2D>(@"Images\\ball"),
-                cm.Load<Texture2D>(@"Images\\ball"),
+                cm.Load<Texture2D>(@"Images\\player"),
                 cm.Load<SpriteFont>(@"Fonts\\BigFont"),
                 cm.Load<SpriteFont>(@"Fonts\\ScoreFont"),
                 cm.Load<SpriteFont>(@"Fonts\\StartFont"),
                 cm.Load<SoundEffect>(@"Sound\\eat"),
                 cm.Load<SoundEffect>(@"Sound\\dead"),
                 cm.Load<SoundEffect>(@"Sound\\end"),
-                cm.Load<SoundEffect>(@"Sound\\bgm")
+                cm.Load<SoundEffect>(@"Sound\\bgm"),
+                cm.Load<SoundEffect>(@"Sound\\levelUp"),
+                cm.Load<SoundEffect>(@"Sound\\victory")
             );   
             
         
@@ -74,7 +80,9 @@ namespace BallBattle
 
         private Resourse(Texture2D bg,Texture2D t1,Texture2D t2,
             SpriteFont bigFont,SpriteFont scoreFont,SpriteFont startFont,
-            SoundEffect eat, SoundEffect deadsound,SoundEffect endSound,SoundEffect bgm)
+            SoundEffect eat, SoundEffect deadsound,SoundEffect endSound,SoundEffect bgm,
+            SoundEffect levelUp,SoundEffect v
+            )
         {
             baseBallTexture = new MyTexture(t1,new Point(512, 298), new Point(2, 2));
             playerBallTexture = new MyTexture(t2, new Point(512, 298), new Point(2, 2));
@@ -86,6 +94,8 @@ namespace BallBattle
             this.bgm = bgm;
             this.deadSound = deadsound;
             this.endSound = endSound;
+            this.levelUp = levelUp;
+            this.victory = v;
 
         }
 

@@ -20,7 +20,7 @@
       </Class>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AIAAAAAAAEAIAQAAAAEACAAAAgFAAAYAAAAAAACQQQA=</HashCode>
+      <HashCode>AIEAAAAAAEAIAQAAAAEACAAACgFABAYABACAAgCRQwA=</HashCode>
       <FileName>Chapters.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -34,7 +34,7 @@
   <Class Name="BallBattle.Game1">
     <Position X="7.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEEAAAAAAAwAAAAAAEAAAAgAAAAgAAAAgAAAAAAQ=</HashCode>
+      <HashCode>AAQAEEAAAAAAAwIAAAAAEAAAAgAAAAgAAAAgAAAAAAQ=</HashCode>
       <FileName>Game1.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -48,7 +48,7 @@
   <Class Name="BallBattle.PlayerBall">
     <Position X="6.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAgAAAgABAAAAAAAAAAAAAAAAAYIAAAAAAABAAA=</HashCode>
+      <HashCode>AAEAAAgAAAgABAAAAEAAAAAAAAAAAAYIAAAAAAABAAA=</HashCode>
       <FileName>Model\PlayerBall.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -69,14 +69,14 @@
       </Class>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>BAAAAAAAAAIAAEAAAACAAAAAAABAAAYAAAABAAAAAAA=</HashCode>
+      <HashCode>BAAQAAAAAAAAAEIAAACAAAAAAABEAAawABABAAAAAAA=</HashCode>
       <FileName>Resourse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BallBattle.ScoreBoard">
     <Position X="14.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAEAAAAAIAAAAAAFgAAYQAAAAAAAEAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAEAAAAAIAAAAAAFAAAYQAAAAAAAEAAA=</HashCode>
       <FileName>ScoreBoard.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -111,12 +111,12 @@
   <Class Name="BallBattle.Model.Interface.LinerRoad">
     <Position X="5.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAgAAAAAIAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAgAAAAAIAAAAAAAAAAAAAABAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Model\Interface\LinerRoad.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BallBattle.Model.Interface.PlayerImpact">
-    <Position X="0.75" Y="8.75" Width="1.5" />
+    <Position X="2.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Model\Interface\PlayerImpact.cs</FileName>

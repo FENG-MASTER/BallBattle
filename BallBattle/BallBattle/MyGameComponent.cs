@@ -72,6 +72,8 @@ namespace BallBattle
                     if (ball.impactBall(PlayerBall.getInstance()))
                     {
                         //Ð¡Çò±»³Ô
+                   
+                
                         removeList.Add(ball);
 
                     }

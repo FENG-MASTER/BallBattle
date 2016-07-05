@@ -86,6 +86,7 @@ namespace BallBattle
                 return;
             }
 
+            Resourse.getInstance().deadSound.Play();
             val = 50;
             postion.X = WallManager.wallRect.Height / 2;
             postion.Y = WallManager.wallRect.Width / 2;
@@ -99,16 +100,27 @@ namespace BallBattle
         }
 
 
-        public override void addVal(int add)
+        public override void addVal(int add, bool isSound = true)
         {
-            if(add>0){
-              Resourse.getInstance().eat.Play();
-            }else{
-               Resourse.getInstance().deadSound.Play();
+            if (isSound == false)
+            {
+                base.addVal(add);
             }
-            
-            base.addVal(add);
+            else {
+                if (add > 0)
+                {
+                    Resourse.getInstance().eat.Play();
+                }
+                else
+                {
+                    Resourse.getInstance().deadSound.Play();
+                }
+
+                base.addVal(add);
+            }
+           
         }
+
 
 
        

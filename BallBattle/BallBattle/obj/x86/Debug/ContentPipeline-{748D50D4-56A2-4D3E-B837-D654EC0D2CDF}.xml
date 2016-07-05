@@ -35,7 +35,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Fonts\StartFont.xnb</Output>
-      <Time>2016-06-30T15:30:55.5316758+08:00</Time>
+      <Time>2016-07-05T14:33:18.2301569+08:00</Time>
     </Item>
     <Item>
       <Source>Images\bg.png</Source>
@@ -90,6 +90,33 @@
       <Options>None</Options>
       <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Sound\end.xnb</Output>
       <Time>2016-07-03T16:18:47.7722312+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\player.png</Source>
+      <Name>Images\player</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Images\player.xnb</Output>
+      <Time>2016-07-05T15:05:07.0934653+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\levelUp.wav</Source>
+      <Name>Sound\levelUp</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Sound\levelUp.xnb</Output>
+      <Time>2016-07-05T19:15:25.9733464+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound\victory.wav</Source>
+      <Name>Sound\victory</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\qianzise\Desktop\C#\BallBattle\BallBattle\BallBattle\bin\x86\Debug\Content\Sound\victory.xnb</Output>
+      <Time>2016-07-05T19:14:48.4747131+08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

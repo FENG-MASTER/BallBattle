@@ -20,7 +20,7 @@ namespace BallBattle
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        GameComponent startComponent;//游戏开始
+        StartComponent startComponent;//游戏开始
         MyGameComponent gameComponent;//游戏
         GameComponent endComponent;//游戏结束
 
@@ -104,17 +104,8 @@ namespace BallBattle
             switch (gameState)
             {
                 case 0:
-
-                    //如果在开始画面
-                    if (keystate.IsKeyDown(Keys.Enter))
-                    {
-                        gameState = 1;//进入游戏状态
-                        Components.RemoveAt(0);
-                        Components.Add(gameComponent);
-                        Chapters.getInstance().init();
-                        gameComponent.clear();
-                        PlayerBall.init(new Vector2(100, 100), 6, Resourse.getInstance().playerBallTexture, 50);
-                        bgm.Play();
+                    if(StartComponent.start){
+                        playGame();
                     }
                     break;
                 case 1:
@@ -138,6 +129,19 @@ namespace BallBattle
             // TODO: Add your update logic here
 
             base.Update(gameTime);
+        }
+
+
+        public void playGame()
+        {
+            gameState = 1;//进入游戏状态
+            Components.RemoveAt(0);
+            Components.Add(gameComponent);
+            Chapters.getInstance().init();
+            gameComponent.clear();
+            PlayerBall.init(new Vector2(100, 100), 6, Resourse.getInstance().playerBallTexture, 50);
+        //    bgm.Play();
+
         }
 
         /// <summary>
