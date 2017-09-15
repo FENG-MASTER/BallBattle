@@ -85,7 +85,8 @@ namespace BallBattle
         public override void Draw(GameTime gameTime)
         {
 
-            GraphicsDevice.Clear(r);
+         //   GraphicsDevice.Clear(r);
+            GraphicsDevice.Clear(Color.CadetBlue);
             Color c = new Color(1, 1, 1);
             
             sb.Begin();

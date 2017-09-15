@@ -79,15 +79,13 @@ namespace BallBattle
 
             initFactory();
             chapters = new List<Chapter>{
-                                          new Chapter(0,Color.White,2,50,-1,1,new List<BallFactory>{f1},new List<int>{1}),                                        
-                                          new Chapter(100,Color.Blue,3,20,-3,2,new List<BallFactory>{f1,f4},new List<int>{8,3}),
-                                          new Chapter(200,Color.Red,4,50,-1,1,new List<BallFactory>{f2,f5},new List<int>{1,1}), 
-                                          new Chapter(300,Color.Red,5,50,-1,1,new List<BallFactory>{f1,f3},new List<int>{1,20}), 
-                                          new Chapter(400,Color.Red,6,50,-1,1,new List<BallFactory>{f1,f5},new List<int>{1,20}), 
-                                          new Chapter(500,Color.Red,8,50,-1,1,new List<BallFactory>{f1,f2,f2,f3,f4,f5,f6},new List<int>{1,1,1,1,1,1}), 
+                                          new Chapter(0,Color.White,2,50,-1,2,new List<BallFactory>{f1},new List<int>{1}),                                        
+                                          new Chapter(50,Color.Blue,3,20,-10,30,new List<BallFactory>{f1,f4},new List<int>{8,3}),
+                                          new Chapter(100,Color.Red,4,50,-1,1,new List<BallFactory>{f2,f3},new List<int>{1,1}), 
+                                          new Chapter(150,Color.Red,5,50,-1,2,new List<BallFactory>{f1,f3},new List<int>{1,1}), 
+                                          new Chapter(200,Color.Red,6,50,-1,2,new List<BallFactory>{f1,f5},new List<int>{1,20}), 
+                                          new Chapter(250,Color.Red,8,50,-1,2,new List<BallFactory>{f1,f2,f2,f3,f4,f5,f6},new List<int>{1,1,1,1,1,1}), 
                                         };
-
-
             init();
         }
 
@@ -226,7 +224,7 @@ namespace BallBattle
                 level++;
                 Resourse.getInstance().levelUp.Play();
                 if(level>=2){
-                    PlayerBall.getInstance().addVal(-100,false);
+                    PlayerBall.getInstance().addVal(-50,false);
                 }
             }
 

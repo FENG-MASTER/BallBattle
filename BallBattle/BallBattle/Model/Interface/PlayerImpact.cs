@@ -12,6 +12,7 @@ namespace BallBattle.Model.Interface
     class PlayerImpact
         :ImpactInterface
     {
+        public int detaTime = 1;
 
         private PlayerBall player;
         public PlayerImpact(BaseBall p):base(p) {
@@ -23,7 +24,15 @@ namespace BallBattle.Model.Interface
         {
             if(player.getVal()<=otherBall.getVal()){
                 //玩家被大球吃
-                player.dead();
+                if (detaTime <= 0)
+                {
+                    player.dead();
+                }
+                else {
+                    Resourse.getInstance().deadSound.Play();
+                    player.addVal(-2);
+                    detaTime--;
+                }
             }
 
             return true;

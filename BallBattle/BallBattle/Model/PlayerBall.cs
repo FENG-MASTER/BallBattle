@@ -91,6 +91,8 @@ namespace BallBattle
             postion.X = WallManager.wallRect.Height / 2;
             postion.Y = WallManager.wallRect.Width / 2;
 
+            ((PlayerImpact)impactInterface).detaTime = 1;
+
         
         }
 
@@ -118,7 +120,9 @@ namespace BallBattle
 
                 base.addVal(add);
             }
-           
+            if(val<=0){
+                dead();
+            } 
         }
 
 

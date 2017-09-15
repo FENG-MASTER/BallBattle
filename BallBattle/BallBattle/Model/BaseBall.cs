@@ -24,9 +24,9 @@ namespace BallBattle
         private Resourse.MyTexture myTexture;
 
 
-        private ImpactInterface impactInterface;//碰撞器
+        protected ImpactInterface impactInterface;//碰撞器
 
-        private RoadInterface roadInterface;//路径器
+        protected RoadInterface roadInterface;//路径器
 
         private Color color=Color.White;
 

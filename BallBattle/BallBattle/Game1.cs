@@ -117,6 +117,7 @@ namespace BallBattle
                         Components.Add(endComponent);
                     if(keystate.IsKeyDown(Keys.Enter)){
                         gameState = 0;
+                        playGame();
                     }
                         
                     break;
@@ -138,9 +139,10 @@ namespace BallBattle
             Components.RemoveAt(0);
             Components.Add(gameComponent);
             Chapters.getInstance().init();
+            ScoreBoard.getInstance().init();
             gameComponent.clear();
             PlayerBall.init(new Vector2(100, 100), 6, Resourse.getInstance().playerBallTexture, 50);
-        //    bgm.Play();
+            bgm.Play();
 
         }
 

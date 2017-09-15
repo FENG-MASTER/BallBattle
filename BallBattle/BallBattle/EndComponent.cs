@@ -81,6 +81,8 @@ namespace BallBattle
                     str = "";
                     break;
             }
+
+            str += "\n\nEnter for Retry";
            
             sb.Begin();
 
